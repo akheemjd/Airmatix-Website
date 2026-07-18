@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stockpile Volume Surveys by Drone — Fixed Quote | Airmatix</title>
+<meta name="description" content="Month-end stockpile volumes measured by RTK drone across the GTA. Repeatable flights, reconciled reports, fixed quotes.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,300..800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F6F5F1;--ink:#1A2129;--orange:#E8590C;--night:#0E141C;--night-2:#131B26;--night-line:#26303D;--night-text:#E9ECEF;--night-soft:#8B96A5;--mono:'IBM Plex Mono',ui-monospace,monospace;--sans:'Archivo',system-ui,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--night);color:var(--night-text);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1160px;margin:0 auto;padding:0 clamp(20px,4vw,44px)}
+.mono{font-family:var(--mono)}
+:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
+header{display:flex;justify-content:space-between;align-items:center;padding:22px 0;border-bottom:1px solid var(--night-line)}
+.mark{font-weight:700;font-stretch:125%;letter-spacing:.22em;font-size:17px;color:var(--night-text)}
+.mark b{color:var(--orange)}
+header a{font-family:var(--mono);font-size:13px;color:var(--night-soft);text-decoration:none}
+header a:hover{color:var(--night-text)}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(36px,5vw,80px);padding:clamp(44px,7vw,84px) 0}
+@media(max-width:880px){.hero{grid-template-columns:1fr}}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--orange);margin-bottom:18px}
+h1{font-weight:700;font-stretch:116%;font-size:clamp(32px,4.8vw,54px);line-height:1.06;letter-spacing:-.015em}
+.sub{color:#C4CBD4;margin-top:18px;max-width:52ch}
+.bullets{list-style:none;margin-top:28px}
+.bullets li{padding:11px 0 11px 28px;position:relative;color:#C4CBD4;font-size:16px;border-bottom:1px solid var(--night-line)}
+.bullets li::before{content:"✓";position:absolute;left:0;color:var(--orange);font-family:var(--mono)}
+.bullets b{color:var(--night-text);font-weight:600}
+.trust{font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;color:var(--night-soft);margin-top:26px;text-transform:uppercase}
+.card{background:var(--night-2);border:1px solid var(--night-line);padding:28px;border-radius:2px;align-self:start}
+.card h2{font-weight:650;font-stretch:112%;font-size:22px;margin-bottom:20px;letter-spacing:-.01em}
+form{display:grid;gap:14px}
+label{display:block;font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--night-soft);margin-bottom:7px}
+input,textarea{width:100%;background:var(--night);border:1px solid var(--night-line);color:var(--night-text);padding:12px 13px;font-family:var(--sans);font-size:15.5px;border-radius:2px}
+input:focus,textarea:focus{outline:none;border-color:var(--orange)}
+textarea{min-height:88px;resize:vertical}
+.btn{display:inline-block;background:var(--orange);color:#fff;border:0;font-family:var(--sans);font-weight:600;font-size:16px;padding:15px 28px;border-radius:2px;cursor:pointer;width:100%;transition:background .2s}
+.btn:hover{background:#D14E08}
+.note{font-family:var(--mono);font-size:12px;color:var(--night-soft);line-height:1.6}
+.qas{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--night-line);border:1px solid var(--night-line);margin:0 0 clamp(44px,7vw,84px)}
+@media(max-width:880px){.qas{grid-template-columns:1fr}}
+.qa{background:var(--night);padding:26px 24px 30px}
+.qa h3{font-weight:650;font-stretch:112%;font-size:17px;margin-bottom:10px;letter-spacing:-.005em}
+.qa p{color:var(--night-soft);font-size:14.5px;line-height:1.65}
+.last{text-align:center;padding-bottom:clamp(44px,7vw,84px)}
+.last .btn{width:auto}
+footer{border-top:1px solid var(--night-line);padding:18px 0 26px}
+footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;color:var(--night-soft)}
+footer a{color:var(--night-soft)}
+</style>
+</head>
+<body>
+<div class="wrap"><header>
+  <span class="mark">AIRMATI<b>X</b></span>
+  <a href="mailto:info@airmatix.ca">info@airmatix.ca</a>
+</header></div>
+
+<main class="wrap">
+  <div class="hero">
+    <div>
+      <p class="eyebrow">Stockpile volumetrics · GTA &amp; Southern Ontario</p>
+      <h1>Month-end stockpile numbers, flown and delivered.</h1>
+      <p class="sub">RTK drone volume surveys for aggregate yards and earthworks. The same flight plan every visit, a report that reconciles against your tickets, and nobody climbing a pile.</p>
+      <ul class="bullets">
+        <li><b>Repeatable.</b> Identical flight plan each visit, so month-over-month change is real.</li>
+        <li><b>Safe.</b> Measured from the air. No one walks the piles.</li>
+        <li><b>Certified.</b> Flown by a Transport Canada Advanced Operations pilot.</li>
+        <li><b>Fast.</b> Deliverables typically inside 2–5 business days.</li>
+      </ul>
+      <p class="trust">RTK corrected · CM-level geotags · Fixed written quotes</p>
+    </div>
+    <div class="card" id="lead">
+      <h2>Get a fixed quote</h2>
+      <form id="leadform" novalidate>
+        <input type="hidden" name="service" value="volumetric-analysis">
+        <input type="hidden" name="lp" value="1">
+        <div style="position:absolute;left:-9999px" aria-hidden="true"><label for="f-co">Company</label><input id="f-co" name="company" type="text" tabindex="-1" autocomplete="off"></div>
+        <div><label for="f-name">Name</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
+        <div><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+        <div><label for="f-phone">Phone (optional)</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+        <div><label for="f-loc">Yard / site location</label><input id="f-loc" name="location" type="text" placeholder="City or address"></div>
+        <div><label for="f-msg">Roughly how many piles or sites?</label><textarea id="f-msg" name="message"></textarea></div>
+        <button class="btn" type="submit">Get my quote</button>
+        <p class="note">Free consultation. Written quote, fixed before we fly. Reply within one business day.</p>
+      </form>
+    </div>
+  </div>
+
+  <div class="qas">
+    <div class="qa"><h3>How accurate is it?</h3><p>Flights run with live RTK corrections, and the same plan and processing every visit is what makes month-over-month change dependable. Expected accuracy is stated in your quote, with independent checkpoints available when you need the numbers verified.</p></div>
+    <div class="qa"><h3>What do you need from us?</h3><p>Agreement on how piles are defined — boundaries, toe rules, and the base surface volumes are measured against. No base surface yet? The first flight establishes the baseline.</p></div>
+    <div class="qa"><h3>More than one yard?</h3><p>Multiple yards can be scheduled in the same run, so inventory across locations lands on a consistent timeline. Tell us the sites and the reporting date you're working toward.</p></div>
+  </div>
+
+  <div class="last"><a class="btn" href="#lead">Get a fixed quote</a></div>
+</main>
+
+<footer><div class="wrap">
+  <span>© 2026 AIRMATIX</span>
+  <span><a href="mailto:info@airmatix.ca">INFO@AIRMATIX.CA</a> · GTA · SOUTHERN ONTARIO</span>
+</div></footer>
+
+<script>
+document.getElementById('leadform').addEventListener('submit',async function(ev){
+  ev.preventDefault();
+  var f=ev.target;
+  if(f.company&&f.company.value)return;
+  var data={name:f.name.value,email:f.email.value,phone:f.phone.value,location:f.location.value,message:f.message.value,service:f.service.value,lp:'1',page:location.pathname};
+  try{
+    var r=await fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+    if(r.ok){location.href='/thanks/';return}
+    throw 0;
+  }catch(e){
+    var body='Name: '+data.name+'\nEmail: '+data.email+'\nPhone: '+data.phone+'\nSite location: '+data.location+'\nService: '+data.service+' (LP)\n\n'+data.message;
+    location.href='mailto:info@airmatix.ca?subject='+encodeURIComponent('Quote request — '+(data.location||'stockpile volumes'))+'&body='+encodeURIComponent(body);
+  }
+});
+</script>
+</body>
+</html>

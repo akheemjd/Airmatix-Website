@@ -1,312 +1,395 @@
 <!DOCTYPE html>
 <html lang="en-CA">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Stockpile Volume Measurement by Drone | Airmatix GTA</title>
-<meta name="description" content="Drone stockpile and earthworks volume measurement in the GTA. Safe, repeatable volumetric surveys with reports you can reconcile against inventory and pay items.">
+<title>Stockpile Volume Surveys &amp; Volumetric Analysis GTA | Airmatix</title>
+<meta name="description" content="Drone stockpile and earthworks volume surveys in the GTA. Repeatable monthly flights, reports that reconcile against tickets, nobody climbing a pile.">
 <link rel="canonical" href="https://airmatix.ca/services/volumetric-analysis/">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Airmatix">
-<meta property="og:title" content="Stockpile Volume Measurement by Drone | Airmatix GTA">
-<meta property="og:description" content="Drone stockpile and earthworks volume measurement in the GTA. Safe, repeatable volumetric surveys with reports you can reconcile against inventory and pay items.">
-<meta property="og:url" content="https://airmatix.ca/services/volumetric-analysis/">
-<meta property="og:image" content="https://airmatix.ca/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
 <meta property="og:locale" content="en_CA">
+<meta property="og:url" content="https://airmatix.ca/services/volumetric-analysis/">
+<meta property="og:title" content="Stockpile Volume Surveys &amp; Volumetric Analysis GTA | Airmatix">
+<meta property="og:description" content="Drone stockpile and earthworks volume surveys in the GTA. Repeatable monthly flights, reports that reconcile against tickets, nobody climbing a pile.">
+<meta property="og:image" content="https://airmatix.ca/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@AirmatixCa">
-<meta name="twitter:title" content="Stockpile Volume Measurement by Drone | Airmatix GTA">
-<meta name="twitter:description" content="Drone stockpile and earthworks volume measurement in the GTA. Safe, repeatable volumetric surveys with reports you can reconcile against inventory and pay items.">
-<meta name="twitter:image" content="https://airmatix.ca/og-image.png">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,100,400..800&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400..600;1,400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,300..800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Volumetric Analysis", "serviceType": "Volumetric Analysis", "provider": {"@type": "ProfessionalService", "name": "Airmatix", "url": "https://airmatix.ca/", "email": "info@airmatix.ca"}, "areaServed": ["Toronto", "Mississauga", "Brampton", "Vaughan", "Markham", "Oakville", "Burlington", "Hamilton", "Oshawa", "Southern Ontario"], "url": "https://airmatix.ca/services/volumetric-analysis/", "description": "Drone stockpile and earthworks volume surveys in the GTA. Repeatable monthly flights, reports that reconcile against tickets, nobody climbing a pile."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://airmatix.ca/"}, {"@type": "ListItem", "position": 2, "name": "Services", "item": "https://airmatix.ca/services/"}, {"@type": "ListItem", "position": 3, "name": "Volumetric Analysis", "item": "https://airmatix.ca/services/volumetric-analysis/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How accurate are drone-measured volumes?", "acceptedAnswer": {"@type": "Answer", "text": "For inventory work, what matters most is repeatability: the same flight plan and processing every visit, so the change between flights is real. Expected accuracy is stated in the quote, and independent checkpoints are available when a project needs the numbers verified."}}, {"@type": "Question", "name": "What do you need from us?", "acceptedAnswer": {"@type": "Answer", "text": "Agreement on how piles are defined — boundaries, toe rules, and the base surface volumes are measured against. If there's no base surface yet, the first flight establishes the baseline everything after is compared to."}}, {"@type": "Question", "name": "Can you cover more than one yard?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Multiple yards can be scheduled in the same run so inventory across locations is measured on a consistent timeline. Tell us the sites and the reporting date you're working toward."}}]}</script>
 <style>
 :root{
-  --paper:#F6F8F4;      /* plan-sheet white  */
-  --card:#FFFFFF;
-  --ink:#10202E;        /* chart navy        */
-  --ink-2:#46586A;      /* slate secondary   */
-  --line:#D8DFD8;       /* hairline          */
-  --contour:#B9C6BB;    /* contour tint      */
-  --flag:#E8501A;       /* field-flag orange */
-  --flag-deep:#C13F10;
-  --band:#0C2233;       /* dark section      */
-  --band-ink:#EDF2EE;
-  --band-2:#8FA3B2;
-  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
-  --disp:"Archivo",system-ui,sans-serif;
-  --body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --paper:#F6F5F1;
+  --paper-2:#EFEDE6;
+  --ink:#1A2129;
+  --ink-soft:#4A5361;
+  --line:#D4D0C4;
+  --line-soft:#E3E0D6;
+  --blue:#1D3FAE;
+  --orange:#E8590C;
+  --night:#0E141C;
+  --night-2:#131B26;
+  --night-line:#26303D;
+  --night-text:#E9ECEF;
+  --night-soft:#8B96A5;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+  --sans:'Archivo',system-ui,sans-serif;
+  --max:1240px;
+  --pad:clamp(20px,4vw,48px);
+  --sec:clamp(88px,10vw,140px);
 }
-*,*::before,*::after{box-sizing:border-box}
-.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:#fff;
-  padding:.7em 1.2em;z-index:100;border-radius:0 0 6px 0;text-decoration:none}
-.skip:focus{left:0}
+*{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-@media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  *,*::before,*::after{animation:none!important;transition:none!important}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  font-family:var(--sans);
+  background:var(--paper);
+  color:var(--ink);
+  font-size:17px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
 }
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);
-  font-size:1.0625rem;line-height:1.65;-webkit-font-smoothing:antialiased}
-img,svg{display:block;max-width:100%}
+::selection{background:var(--blue);color:#fff}
+.skip{position:absolute;left:-999px;top:0;background:var(--ink);color:#fff;padding:10px 16px;z-index:99;font-size:14px}
+.skip:focus{left:12px;top:12px}
 a{color:inherit}
-:focus-visible{outline:2px solid var(--flag);outline-offset:3px;border-radius:2px}
-.wrap{max-width:1120px;margin-inline:auto;padding-inline:clamp(20px,4vw,40px)}
-.mono{font-family:var(--mono);font-size:.78rem;letter-spacing:.08em}
+:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
+.wrap{max-width:var(--max);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+.mono{font-family:var(--mono)}
 
-/* ---------- type ---------- */
-h1,h2,h3,h4{font-family:var(--disp);font-stretch:112%;line-height:1.08;
-  letter-spacing:-.015em;margin:0 0 .5em;font-weight:700;text-wrap:balance}
-h1{font-size:clamp(2.3rem,5.6vw,3.9rem)}
-h2{font-size:clamp(1.7rem,3.4vw,2.5rem)}
-h3{font-size:clamp(1.15rem,2vw,1.35rem)}
-p{margin:0 0 1em}
-.lede{font-size:clamp(1.1rem,1.8vw,1.3rem);color:var(--ink-2);max-width:44em}
-.eyebrow{font-family:var(--mono);font-size:.75rem;letter-spacing:.16em;
-  text-transform:uppercase;color:var(--flag);display:flex;align-items:center;
-  gap:.6em;margin:0 0 1.1em;font-weight:500}
-.eyebrow::before{content:"";width:22px;height:1.5px;background:var(--flag)}
-
-/* ---------- header ---------- */
-.top{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--paper) 88%,transparent);
-  backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.top .wrap{display:flex;align-items:center;gap:1.6rem;min-height:70px}
-.brand{display:flex;align-items:center;gap:.65rem;text-decoration:none;
-  font-family:var(--disp);font-weight:800;font-stretch:118%;font-size:1.22rem;
-  letter-spacing:.02em}
-.brand .mark{color:var(--ink);flex-shrink:0}
-.nav{margin-left:auto;display:flex;align-items:center;gap:clamp(.9rem,2.4vw,2rem)}
-.nav a{text-decoration:none;font-weight:500;font-size:.98rem;color:var(--ink-2)}
-.nav a:hover,.nav a[aria-current]{color:var(--ink)}
-.btn{display:inline-flex;align-items:center;gap:.55em;background:var(--flag);
-  color:#fff;text-decoration:none;font-weight:600;font-family:var(--disp);
-  font-stretch:106%;padding:.72em 1.35em;border-radius:6px;border:0;
-  font-size:.98rem;transition:background .15s}
-.btn:hover{background:var(--flag-deep)}
-.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
-.btn.ghost:hover{background:var(--ink);color:var(--paper)}
-.btn.onband{background:var(--flag)}
-.menu-btn{display:none;margin-left:auto;background:none;border:1.5px solid var(--ink);
-  border-radius:6px;padding:.45rem .6rem;cursor:pointer;color:var(--ink)}
-@media (max-width:860px){
-  .menu-btn{display:block}
-  .nav{position:fixed;inset:70px 0 auto 0;background:var(--paper);flex-direction:column;
-    align-items:stretch;padding:1rem clamp(20px,4vw,40px) 1.4rem;gap:.2rem;
-    border-bottom:1px solid var(--line);display:none}
-  .nav.open{display:flex}
-  .nav a{padding:.7rem 0;border-bottom:1px solid var(--line);font-size:1.05rem}
-  .nav .btn{margin-top:.9rem;justify-content:center}
-}
+/* ---------- nav ---------- */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+.nav.on{background:rgba(246,245,241,.92);backdrop-filter:blur(12px);border-color:var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:68px}
+.mark{font-weight:700;font-stretch:125%;letter-spacing:.22em;font-size:17px;text-decoration:none;color:var(--night-text);transition:color .3s}
+.nav.on .mark{color:var(--ink)}
+.mark b{color:var(--orange)}
+.nav-links{display:flex;gap:32px;align-items:center;list-style:none}
+.nav-links a{text-decoration:none;font-size:14.5px;font-weight:500;color:var(--night-soft);transition:color .2s}
+.nav.on .nav-links a{color:var(--ink-soft)}
+.nav-links a:hover{color:var(--orange)}
+.btn{display:inline-block;text-decoration:none;font-weight:600;font-size:15px;padding:13px 26px;border-radius:2px;transition:transform .2s,box-shadow .2s,background .2s;cursor:pointer;border:0;font-family:var(--sans)}
+.btn-orange{background:var(--orange);color:#fff}
+.btn-orange:hover{background:#D14E08;transform:translateY(-1px);box-shadow:0 6px 20px rgba(232,89,12,.28)}
+.btn-ghost{border:1px solid var(--night-line);color:var(--night-text)}
+.btn-ghost:hover{border-color:var(--night-soft)}
+.btn-ink{background:var(--ink);color:#fff}
+.btn-ink:hover{background:#0E141C;transform:translateY(-1px)}
+.nav .btn{padding:10px 20px;font-size:14px}
+@media(max-width:760px){.nav-links li.hidenav{display:none}}
 
 /* ---------- hero ---------- */
-.hero{position:relative;overflow:hidden;padding:clamp(64px,9vw,110px) 0 clamp(56px,8vw,96px)}
-.hero .contours{position:absolute;inset:0;width:100%;height:100%;color:var(--contour);opacity:.5;z-index:0}
-.hero .wrap{position:relative;z-index:1;display:grid;gap:clamp(2.2rem,5vw,4rem);
-  grid-template-columns:minmax(0,1fr);align-items:center}
-.hero h1{max-width:16ch}
-.hero h1 .u{color:var(--flag)}
-.hero .actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.8rem}
-.coords{margin-top:2.4rem;color:var(--ink-2)}
+.hero{position:relative;background:var(--night);color:var(--night-text);min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
+#cloud{position:absolute;inset:0;width:100%;height:100%}
+.hero-grad{position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,20,28,.55) 0%,rgba(14,20,28,.15) 45%,rgba(14,20,28,.82) 100%);pointer-events:none}
+.hero-in{position:relative;z-index:2;padding-top:140px;padding-bottom:0}
+.tele{display:flex;gap:28px;flex-wrap:wrap;font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--night-soft);margin-bottom:26px}
+.tele span b{color:#5FD068;font-weight:500}
+.h1{font-weight:700;font-stretch:118%;font-size:clamp(40px,7.2vw,86px);line-height:1.02;letter-spacing:-.015em;max-width:12ch}
+.h1 em{font-style:normal;color:var(--orange)}
+.hero-sub{max-width:56ch;margin-top:24px;font-size:clamp(16px,1.6vw,19px);color:#C4CBD4;line-height:1.65}
+.hero-cta{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
+.hero-strip{position:relative;z-index:2;margin-top:64px;border-top:1px solid var(--night-line)}
+.strip-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.strip-cell{padding:22px 20px 26px 0;border-right:1px solid var(--night-line)}
+.strip-cell:last-child{border-right:0}
+.strip-cell+.strip-cell{padding-left:20px}
+.strip-k{font-weight:700;font-stretch:115%;font-size:clamp(20px,2.4vw,30px);letter-spacing:-.01em}
+.strip-l{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;color:var(--night-soft);margin-top:6px;text-transform:uppercase}
+@media(max-width:760px){.strip-grid{grid-template-columns:1fr 1fr}.strip-cell{border-bottom:1px solid var(--night-line);padding-left:0}.strip-cell:nth-child(2n){border-right:0;padding-left:20px}.strip-cell:nth-child(3){border-right:1px solid var(--night-line)}.strip-cell:nth-child(n+3){border-bottom:0}}
 
-/* title-block card — signature element */
-.tblock{position:relative;background:var(--card);border:1.5px solid var(--ink);
-  border-radius:4px;box-shadow:6px 6px 0 0 color-mix(in srgb,var(--ink) 12%,transparent)}
-.tblock .fid{position:absolute;color:var(--flag)}
-.tblock .fid.tl{top:-9px;left:-9px}.tblock .fid.br{bottom:-9px;right:-9px}
-.tblock header{display:flex;justify-content:space-between;align-items:center;
-  padding:.8rem 1.1rem;border-bottom:1.5px solid var(--ink);
-  font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase}
-.tblock header b{font-weight:600}
-.tblock dl{margin:0}
-.tblock .row{display:grid;grid-template-columns:38% 62%;border-bottom:1px solid var(--line)}
-.tblock .row:last-child{border-bottom:0}
-.tblock dt{padding:.72rem 1.1rem;font-family:var(--mono);font-size:.7rem;
-  letter-spacing:.13em;text-transform:uppercase;color:var(--ink-2);
-  border-right:1px solid var(--line);align-self:center}
-.tblock dd{margin:0;padding:.72rem 1.1rem;font-weight:500;font-size:.95rem}
+/* ---------- marquee ---------- */
+.marq{background:var(--night);border-top:1px solid var(--night-line);overflow:hidden;padding:13px 0}
+.marq-track{display:flex;gap:0;white-space:nowrap;animation:marq 34s linear infinite;width:max-content}
+.marq span{font-family:var(--mono);font-size:12.5px;letter-spacing:.14em;color:var(--night-soft);padding:0 26px;text-transform:uppercase}
+.marq span i{font-style:normal;color:var(--orange);padding-right:52px}
+@keyframes marq{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.marq-track{animation:none}}
 
-/* ---------- sections ---------- */
-.sec{padding:clamp(56px,8vw,104px) 0}
-.sec.tint{background:#EFF3EC;border-block:1px solid var(--line)}
-.sec-head{max-width:46em;margin-bottom:clamp(2rem,4vw,3rem)}
+/* ---------- sheet sections ---------- */
+.sec{padding-top:var(--sec);padding-bottom:var(--sec)}
+.sec-tight{padding-top:calc(var(--sec)*.66);padding-bottom:calc(var(--sec)*.66)}
+.eyebrow{display:flex;align-items:center;gap:14px;font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);margin-bottom:20px}
+.eyebrow::before{content:"";width:34px;height:1px;background:var(--blue)}
+.h2{font-weight:700;font-stretch:115%;font-size:clamp(30px,4.2vw,52px);line-height:1.08;letter-spacing:-.015em;max-width:22ch}
+.lede{max-width:60ch;color:var(--ink-soft);margin-top:18px;font-size:clamp(16px,1.5vw,18.5px)}
 
-/* service cards */
-.cards{display:grid;gap:1.1rem;grid-template-columns:repeat(auto-fit,minmax(270px,1fr))}
-.card{position:relative;background:var(--card);border:1px solid var(--line);
-  border-radius:8px;padding:1.6rem 1.5rem 1.5rem;text-decoration:none;
-  display:flex;flex-direction:column;gap:.55rem;transition:border-color .15s,transform .15s}
-.card:hover{border-color:var(--ink);transform:translateY(-2px)}
-.card .icn{width:34px;height:34px;color:var(--flag);margin-bottom:.4rem}
-.card h3{margin:0}
-.card p{margin:0;color:var(--ink-2);font-size:.97rem}
-.card .go{margin-top:auto;padding-top:.9rem;font-family:var(--mono);font-size:.75rem;
-  letter-spacing:.12em;text-transform:uppercase;color:var(--flag);font-weight:500}
-.card:hover .go{text-decoration:underline;text-underline-offset:3px}
+/* services */
+.svc-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:56px}
+.svc{grid-column:span 2;background:var(--paper);padding:34px 30px 40px;text-decoration:none;position:relative;transition:background .25s;display:block}
+.svc:nth-child(4),.svc:nth-child(5){grid-column:span 3}
+.svc:hover{background:#fff}
+.svc-no{font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;color:var(--ink-soft)}
+.svc svg{display:block;margin:22px 0 18px;stroke:var(--blue);fill:none;stroke-width:1.5}
+.svc:hover svg .draw{stroke-dasharray:120;stroke-dashoffset:120;animation:draw .9s ease forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.svc h3{font-weight:650;font-stretch:112%;font-size:21px;letter-spacing:-.01em}
+.svc p{color:var(--ink-soft);font-size:15.5px;margin-top:10px;line-height:1.6}
+.svc-go{font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--orange);margin-top:20px;display:inline-block;text-transform:uppercase}
+.svc:hover .svc-go{text-decoration:underline;text-underline-offset:4px}
+@media(max-width:920px){.svc,.svc:nth-child(4),.svc:nth-child(5){grid-column:span 3}}
+@media(max-width:640px){.svc,.svc:nth-child(4),.svc:nth-child(5){grid-column:span 6}}
 
-/* dark accuracy band */
-.band{background:var(--band);color:var(--band-ink);position:relative;overflow:hidden}
-.band .contours{position:absolute;inset:0;width:100%;height:100%;color:#31485B;opacity:.55}
-.band .wrap{position:relative}
-.band h2{color:#fff}
-.band .lede{color:var(--band-2)}
-.specs{display:grid;gap:1px;background:#31485B;border:1px solid #31485B;border-radius:8px;
-  overflow:hidden;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin-top:2.4rem}
-.spec{background:var(--band);padding:1.5rem 1.4rem}
-.spec .k{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;
-  text-transform:uppercase;color:var(--flag);margin-bottom:.55rem}
-.spec .v{font-family:var(--disp);font-stretch:110%;font-weight:700;font-size:1.3rem;color:#fff}
-.spec p{margin:.45rem 0 0;font-size:.92rem;color:var(--band-2)}
+/* image slots */
+.slot{position:relative;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:
+ repeating-linear-gradient(-45deg,transparent 0 14px,rgba(29,63,174,.05) 14px 15px),var(--paper-2);
+ min-height:min(62vh,560px);display:flex;align-items:flex-end;overflow:hidden}
+.slot svg.topo{position:absolute;inset:0;width:100%;height:100%;opacity:.5}
+.slot-tag{position:relative;z-index:2;margin:0 0 22px 22px;background:var(--ink);color:#fff;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;padding:8px 14px}
+.slot-tag b{color:var(--orange);font-weight:500}
+.slot.dark{background:repeating-linear-gradient(-45deg,transparent 0 14px,rgba(255,255,255,.03) 14px 15px),var(--night-2);border-color:var(--night-line)}
 
-/* process — a real sequence, numbering is information */
-.steps{counter-reset:s;display:grid;gap:1.1rem;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
-.step{counter-increment:s;background:var(--card);border:1px solid var(--line);
-  border-radius:8px;padding:1.5rem 1.4rem}
-.step::before{content:"0" counter(s);font-family:var(--mono);color:var(--flag);
-  font-size:.8rem;letter-spacing:.14em;display:block;margin-bottom:.7rem}
-.step h3{font-size:1.08rem}
-.step p{margin:0;color:var(--ink-2);font-size:.95rem}
+/* accuracy */
+.acc-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(40px,6vw,90px);margin-top:56px;align-items:center}
+@media(max-width:880px){.acc-grid{grid-template-columns:1fr}}
+.acc-copy p{color:var(--ink-soft);line-height:1.7}
+.spec{margin-top:38px;border-top:1px solid var(--line)}
+.spec-row{display:grid;grid-template-columns:170px 1fr;gap:18px;padding:16px 0;border-bottom:1px solid var(--line)}
+.spec-row dt{font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);padding-top:3px}
+.spec-row dd{font-size:15.5px;line-height:1.55}
+.spec-row dd b{font-weight:650}
+@media(max-width:520px){.spec-row{grid-template-columns:1fr;gap:6px}}
+.acc-vis{aspect-ratio:1/1;max-width:460px;margin:0 auto;position:relative;width:100%}
+.ring-m{position:absolute;inset:0;border:1px dashed rgba(29,63,174,.5);border-radius:50%;animation:breathe 4.5s ease-in-out infinite}
+@keyframes breathe{0%,100%{transform:scale(.96);opacity:.55}50%{transform:scale(1.02);opacity:.9}}
+.ring-lbl{position:absolute;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;color:var(--blue)}
+.ring-lbl.top{top:-4px;left:50%;transform:translate(-50%,-100%);padding-bottom:6px}
+.dot-cm{position:absolute;left:50%;top:50%;width:10px;height:10px;background:var(--orange);border-radius:50%;transform:translate(-50%,-50%);box-shadow:0 0 0 6px rgba(232,89,12,.15)}
+.dot-lbl{position:absolute;left:50%;top:50%;transform:translate(14px,-50%);font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;color:var(--ink)}
+.dot-lbl b{color:#3B8A3F;font-weight:500}
+@media(prefers-reduced-motion:reduce){.ring-m{animation:none}}
 
-/* industries + area */
-.two{display:grid;gap:clamp(2rem,5vw,4rem);grid-template-columns:1fr 1fr;align-items:start}
-@media (max-width:820px){.two{grid-template-columns:1fr}}
-.tags{display:flex;flex-wrap:wrap;gap:.55rem;padding:0;margin:1.2rem 0 0;list-style:none}
-.tags li{border:1px solid var(--ink);border-radius:999px;padding:.42em 1em;
-  font-size:.92rem;font-weight:500;background:var(--card)}
-.arealist{columns:2;gap:2.5rem;padding:0;margin:1.2rem 0 0;list-style:none}
-.arealist li{padding:.5rem 0;border-bottom:1px solid var(--line);font-weight:500}
-@media (max-width:480px){.arealist{columns:1}}
+/* process */
+.proc{counter-reset:step;margin-top:56px;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.step{background:var(--paper);padding:30px 26px 38px;position:relative}
+.step::before{counter-increment:step;content:"0" counter(step);font-family:var(--mono);font-size:12px;letter-spacing:.12em;color:var(--orange)}
+.step h3{font-weight:650;font-stretch:112%;font-size:19px;margin:16px 0 10px;letter-spacing:-.01em}
+.step p{color:var(--ink-soft);font-size:15px;line-height:1.6}
+@media(max-width:980px){.proc{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.proc{grid-template-columns:1fr}}
 
-/* checklist */
-.checks{list-style:none;padding:0;margin:1.4rem 0 0;display:grid;gap:.75rem}
-.checks li{padding-left:1.9rem;position:relative}
-.checks li::before{content:"";position:absolute;left:0;top:.42em;width:1rem;height:.55rem;
-  border-left:2.5px solid var(--flag);border-bottom:2.5px solid var(--flag);transform:rotate(-45deg)}
+/* coverage */
+.cov{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.cov-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,90px);align-items:center}
+@media(max-width:820px){.cov-grid{grid-template-columns:1fr}}
+.cov-cities{columns:2;gap:32px;margin-top:26px;list-style:none}
+.cov-cities li{font-family:var(--mono);font-size:14px;padding:9px 0;border-bottom:1px solid var(--line);break-inside:avoid;color:var(--ink-soft)}
+.cov-cities li::before{content:"◦ ";color:var(--orange)}
+.rings{aspect-ratio:1/1;max-width:420px;width:100%;margin:0 auto}
 
-/* FAQ */
-.faq{max-width:52rem}
-.faq details{border-bottom:1px solid var(--line)}
-.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;
-  gap:1rem;align-items:center;padding:1.15rem 0;font-family:var(--disp);
-  font-weight:600;font-size:1.06rem;font-stretch:105%}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";font-family:var(--mono);color:var(--flag);
-  font-size:1.25rem;flex-shrink:0;transition:transform .15s}
-.faq details[open] summary::after{transform:rotate(45deg)}
-.faq .a{padding:0 0 1.25rem;color:var(--ink-2);max-width:42em}
+/* faq */
+.faq-list{margin-top:48px;border-top:1px solid var(--line)}
+.faq{border-bottom:1px solid var(--line)}
+.faq button{width:100%;background:none;border:0;text-align:left;padding:22px 8px 22px 0;display:flex;justify-content:space-between;align-items:center;gap:20px;cursor:pointer;font-family:var(--sans);font-size:clamp(16.5px,1.7vw,19px);font-weight:600;color:var(--ink);letter-spacing:-.005em}
+.faq button .x{font-family:var(--mono);color:var(--orange);font-size:18px;transition:transform .3s;flex-shrink:0}
+.faq.open button .x{transform:rotate(45deg)}
+.faq-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
+.faq.open .faq-a{grid-template-rows:1fr}
+.faq-a>div{overflow:hidden}
+.faq-a p{color:var(--ink-soft);padding:0 44px 24px 0;line-height:1.7;font-size:16px}
+@media(prefers-reduced-motion:reduce){.faq-a{transition:none}}
 
-/* CTA band */
-.cta{background:var(--band);color:#fff;position:relative;overflow:hidden}
-.cta .contours{position:absolute;inset:0;width:100%;height:100%;color:#31485B;opacity:.5}
-.cta .wrap{position:relative;text-align:center;padding-block:clamp(64px,9vw,110px)}
-.cta p{color:var(--band-2);max-width:38em;margin-inline:auto}
-.cta .btn{margin-top:1.4rem}
-.cta .mono{color:var(--band-2);display:block;margin-top:1.6rem}
-.cta .mono a{color:var(--band-ink)}
+/* cta */
+.cta{background:var(--night);color:var(--night-text);position:relative;overflow:hidden}
+.cta .eyebrow{color:var(--orange)}
+.cta .eyebrow::before{background:var(--orange)}
+.cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,100px)}
+@media(max-width:880px){.cta-grid{grid-template-columns:1fr}}
+.cta p.big{color:#C4CBD4;margin-top:18px;line-height:1.7}
+.cta .mail{font-family:var(--mono);font-size:14px;color:var(--night-soft);margin-top:28px;display:block}
+.cta .mail a{color:var(--night-text);text-decoration-color:var(--orange);text-underline-offset:4px}
+form{display:grid;gap:16px}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:560px){.f-row{grid-template-columns:1fr}}
+label{display:block;font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--night-soft);margin-bottom:8px}
+input,textarea{width:100%;background:var(--night-2);border:1px solid var(--night-line);color:var(--night-text);padding:13px 14px;font-family:var(--sans);font-size:15.5px;border-radius:2px;transition:border-color .2s}
+input:focus,textarea:focus{outline:none;border-color:var(--orange)}
+textarea{min-height:110px;resize:vertical}
+.f-note{font-family:var(--mono);font-size:12px;color:var(--night-soft);line-height:1.6}
 
-/* footer */
-footer{background:var(--paper);border-top:1px solid var(--line);
-  padding:clamp(40px,6vw,64px) 0 2.2rem}
-.fgrid{display:grid;gap:2.4rem;grid-template-columns:1.4fr 1fr 1fr}
-@media (max-width:760px){.fgrid{grid-template-columns:1fr}}
-.fh{font-family:var(--mono);font-size:.72rem;letter-spacing:.15em;
-  text-transform:uppercase;color:var(--ink-2);margin:0 0 .9rem}
-footer ul{list-style:none;margin:0;padding:0;display:grid;gap:.5rem}
-footer a{text-decoration:none;color:var(--ink-2);font-size:.96rem}
-footer a:hover{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
-.fbrand p{color:var(--ink-2);font-size:.94rem;max-width:26em;margin:.9rem 0 0}
-.legal{margin-top:2.6rem;padding-top:1.3rem;border-top:1px solid var(--line);
-  display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;
-  color:var(--ink-2);font-size:.85rem}
+/* footer title block */
+.tblock{background:var(--paper);border-top:2px solid var(--ink)}
+.tb-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;border-left:1px solid var(--line);border-right:1px solid var(--line)}
+.tb-cell{padding:26px 24px 32px;border-right:1px solid var(--line)}
+.tb-cell:last-child{border-right:0}
+.tb-cell h4{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);font-weight:500;margin-bottom:14px}
+.tb-cell ul{list-style:none}
+.tb-cell li{margin-bottom:9px}
+.tb-cell a{text-decoration:none;font-size:14.5px;color:var(--ink);}
+.tb-cell a:hover{color:var(--orange)}
+.tb-brand .mark2{font-weight:700;font-stretch:125%;letter-spacing:.22em;font-size:18px}
+.tb-brand .mark2 b{color:var(--orange)}
+.tb-brand p{color:var(--ink-soft);font-size:14px;margin-top:14px;max-width:34ch;line-height:1.6}
+.tb-foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;border-top:1px solid var(--line);padding:16px 24px;font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;color:var(--ink-soft)}
+@media(max-width:880px){.tb-grid{grid-template-columns:1fr 1fr}.tb-cell{border-bottom:1px solid var(--line)}.tb-brand{grid-column:span 2}}
+@media(max-width:520px){.tb-grid{grid-template-columns:1fr}.tb-brand{grid-column:span 1}.tb-cell{border-right:0}}
 
-/* service page bits */
-.crumbs{font-family:var(--mono);font-size:.75rem;letter-spacing:.1em;
-  text-transform:uppercase;color:var(--ink-2);margin-bottom:1.4rem}
-.crumbs a{color:inherit;text-decoration:none}
-.crumbs a:hover{color:var(--flag)}
-.crumbs span{color:var(--flag)}
-.deliv{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);
-  border-radius:8px;overflow:hidden;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:1.8rem}
-.deliv div{background:var(--card);padding:1.3rem 1.3rem}
-.deliv .k{font-family:var(--mono);font-size:.7rem;letter-spacing:.13em;
-  text-transform:uppercase;color:var(--flag);margin-bottom:.4rem}
-.deliv b{font-family:var(--disp);font-stretch:108%;font-size:1.02rem}
-.deliv p{margin:.35rem 0 0;font-size:.9rem;color:var(--ink-2)}
-.note{border-left:3px solid var(--flag);background:var(--card);border-radius:0 8px 8px 0;
-  padding:1.1rem 1.3rem;margin-top:1.8rem;color:var(--ink-2);font-size:.97rem;max-width:46em}
+/* reveal */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+.rv2{transition-delay:.12s}.rv3{transition-delay:.22s}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+
+/* ---- service page additions ---- */
+.page-hero{background:var(--night);color:var(--night-text);padding-top:150px;padding-bottom:0;position:relative;overflow:hidden}
+.page-hero svg.htopo{position:absolute;inset:0;width:100%;height:100%;opacity:.6}
+.page-hero .wrap{position:relative;z-index:2}
+.crumbs{font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--night-soft);margin-bottom:24px;text-transform:uppercase}
+.crumbs a{color:var(--night-soft);text-decoration:none}
+.crumbs a:hover{color:var(--orange)}
+.page-hero .h1{font-size:clamp(34px,5.6vw,64px)}
+.related{border-top:1px solid var(--line)}
+.related .wrap{display:flex;gap:10px 26px;flex-wrap:wrap;padding-top:24px;padding-bottom:24px;font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;align-items:center}
+.related b{color:var(--ink);font-weight:500;text-transform:uppercase}
+.related a{color:var(--ink-soft);text-decoration:none}
+.related a:hover{color:var(--orange)}
+.uselist{list-style:none;margin-top:22px}
+.uselist li{padding:11px 0 11px 24px;border-bottom:1px solid var(--line);position:relative;color:var(--ink-soft);font-size:15.5px}
+.uselist li::before{content:"—";position:absolute;left:0;color:var(--orange)}
+.note{background:var(--paper-2);border-left:2px solid var(--blue);padding:16px 20px;font-size:15px;color:var(--ink-soft);margin-top:30px;line-height:1.65}
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "ProfessionalService", "@id": "https://airmatix.ca/#org", "name": "Airmatix", "url": "https://airmatix.ca/", "logo": "https://airmatix.ca/og-image.png", "email": "info@airmatix.ca", "description": "RTK drone surveying, mapping, volumetric analysis, inspection, and aerial photography services in the Greater Toronto Area and Southern Ontario.", "areaServed": [{"@type": "City", "name": "Toronto"}, {"@type": "City", "name": "Mississauga"}, {"@type": "City", "name": "Brampton"}, {"@type": "City", "name": "Vaughan"}, {"@type": "City", "name": "Markham"}, {"@type": "City", "name": "Oakville"}, {"@type": "City", "name": "Burlington"}, {"@type": "City", "name": "Hamilton"}, {"@type": "City", "name": "Oshawa"}, {"@type": "AdministrativeArea", "name": "Southern Ontario"}], "address": {"@type": "PostalAddress", "addressRegion": "ON", "addressCountry": "CA"}, "sameAs": ["https://www.linkedin.com/company/airmatix", "https://x.com/AirmatixCa"]}, {"@type": "Service", "name": "Volumetric Analysis", "description": "Drone stockpile and earthworks volume measurement in the GTA. Safe, repeatable volumetric surveys with reports you can reconcile against inventory and pay items.", "url": "https://airmatix.ca/services/volumetric-analysis/", "provider": {"@id": "https://airmatix.ca/#org"}, "areaServed": {"@type": "AdministrativeArea", "name": "Greater Toronto Area and Southern Ontario"}, "serviceType": "Volumetric Analysis"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://airmatix.ca/"}, {"@type": "ListItem", "position": 2, "name": "Services", "item": "https://airmatix.ca/services/"}, {"@type": "ListItem", "position": 3, "name": "Volumetric Analysis", "item": "https://airmatix.ca/services/volumetric-analysis/"}]}]}</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<header class="top">
+<nav class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="mark" href="/">AIRMATI<b>X</b></a>
+    <ul class="nav-links">
+      <li class="hidenav"><a href="/#services">Services</a></li>
+      <li class="hidenav"><a href="/#accuracy">Accuracy</a></li>
+      <li class="hidenav"><a href="/#process">Process</a></li>
+      <li class="hidenav"><a href="#faq">FAQ</a></li>
+      <li><a class="btn btn-orange" href="#quote">Get a quote</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <svg class="htopo" viewBox="0 0 1200 420" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<path d="M-20 320 Q200 200 420 260 T880 220 T1240 260" fill="none" stroke="#26303D"/>
+<path d="M-20 360 Q220 250 440 300 T900 270 T1240 310" fill="none" stroke="#26303D"/>
+<path d="M-20 280 Q180 160 400 220 T860 170 T1240 210" fill="none" stroke="#26303D"/>
+<path d="M-20 240 Q160 120 380 190 T840 130 T1240 170" fill="none" stroke="#E8590C" stroke-opacity=".25"/>
+</svg>
   <div class="wrap">
-    <a class="brand" href="/"><svg class="mark" width="30" height="28" viewBox="0 0 346 328" fill="currentColor" aria-hidden="true"><path d="M0 273.5L85.5 214L173 71L260.5 214L346 273.5L173 0Z"/><path d="M302.5 326.5L173 142L43.5 326.5L165.5 206L180.5 206Z"/></svg>AIRMATIX</a>
-    <button class="menu-btn" aria-expanded="false" aria-label="Open menu">
-      <svg width="20" height="14" viewBox="0 0 20 14" fill="none" aria-hidden="true"><path d="M0 1h20M0 7h20M0 13h20" stroke="currentColor" stroke-width="2"/></svg>
-    </button>
-    <nav class="nav" aria-label="Main">
-      <a href="/services/" aria-current="page">Services</a><a href="/about/">About</a><a href="/contact/">Contact</a>
-      <a class="btn" href="/contact/">Get a quote</a>
-    </nav>
+    <p class="crumbs"><a href="/">Home</a> / <a href="/services/">Services</a> / <span aria-current="page">S–02</span></p>
+    <h1 class="h1">Volumetric analysis</h1>
+    <p class="hero-sub">Stockpile and earthworks volumes measured from the air, on a schedule you set. The same flight plan every visit, so month over month the numbers are actually comparable.</p>
+    <div class="hero-cta">
+      <a class="btn btn-orange" href="#quote">Get a quote</a>
+      <a class="btn btn-ghost" href="#deliver">What you get</a>
+    </div>
+  </div>
+  <div style="height:56px"></div>
+  <div class="wrap hero-strip">
+    <div class="strip-grid">
+      <div class="strip-cell"><div class="strip-k">cm-level</div><div class="strip-l">Image geotag accuracy</div></div>
+      <div class="strip-cell"><div class="strip-k">2–5 days</div><div class="strip-l">Typical delivery</div></div>
+      <div class="strip-cell"><div class="strip-k">1 visit</div><div class="strip-l">Most sites captured</div></div>
+      <div class="strip-cell"><div class="strip-k">CARs IX</div><div class="strip-l">Advanced Operations</div></div>
+    </div>
   </div>
 </header>
+
 <main id="main">
 
-<section class="hero" style="padding-bottom:clamp(40px,6vw,64px)">
-  <svg class="contours" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1"><path d="M-20 520c140-30 200-120 330-130s210 60 340 40 190-110 330-120 200 30 240 40"/><path d="M-20 460c150-40 210-140 330-150s200 50 330 30 200-120 340-130 190 20 240 30"/><path d="M-20 400c160-50 220-150 330-160s190 40 320 20 210-130 350-140 180 10 240 20"/><path d="M-20 340c170-60 230-160 330-170s180 30 310 10 220-140 360-150 170 0 240 10"/><path d="M60 580c120-20 180-90 300-100s220 50 350 30 180-90 320-100 150 20 190 30"/><path d="M-20 280c180-70 240-170 330-180s170 20 300 0 230-150 370-160"/></g></svg>
-  <div class="wrap" style="grid-template-columns:1fr">
-    <div>
-      <p class="crumbs"><a href="/">Home</a> / <a href="/services/">Services</a> / <span>Volumetric Analysis</span></p>
-      <h1>Volumetric analysis</h1>
-      <p class="lede">Stockpile, cut/fill, and earthworks volumes measured from the air — no one climbing piles with a GPS rover, no production shutdowns, and numbers you can measure again next month on the exact same basis.</p>
-      <div class="actions"><a class="btn" href="/contact/">Get a quote</a></div>
+<section class="sec" id="deliver">
+  <div class="wrap">
+    <div class="eyebrow rv">Deliverables</div>
+    <h2 class="h2 rv">What you get</h2>
+    <div class="acc-grid" style="margin-top:40px">
+      <div class="rv rv2">
+        <dl class="spec" style="margin-top:0">
+          <div class="spec-row"><dt>Volume report</dt><dd><b>Per-pile volumes in a PDF report</b>, with the surfaces and boundaries used for each calculation shown, so quantities can be reconciled and audited.</dd></div>
+<div class="spec-row"><dt>Cut &amp; fill</dt><dd><b>Cut/fill maps against design</b> or against a previous flight, for earthworks progress and payment support.</dd></div>
+<div class="spec-row"><dt>Comparisons</dt><dd><b>Surface-to-surface change</b>: this month against last, or current conditions against the baseline.</dd></div>
+<div class="spec-row"><dt>Source data</dt><dd><b>Orthomosaic and point cloud</b> included on request, if your team wants to check the math.</dd></div>
+        </dl>
+      </div>
+      <div class="rv rv3">
+        <div class="eyebrow" style="margin-top:6px">Where it fits</div>
+        <p style="color:var(--ink-soft);line-height:1.7">The typical client here is a yard or a site that needs quantities on a rhythm: month-end inventory across aggregate stockpiles, or earthworks volumes tied to progress payments. Flying it beats climbing it — faster, safer, and repeatable enough to trend.</p>
+        <ul class="uselist">
+          <li>Month-end stockpile inventory for aggregates and soils</li>
+<li>Earthworks quantities for progress payments</li>
+<li>Reconciling measured volumes against scale tickets</li>
+<li>Tracking consumption or production over time</li>
+        </ul>
+        
+      </div>
     </div>
   </div>
 </section>
-<section class="sec" style="padding-top:0">
+
+<div class="slot" role="img" aria-label="Image slot: top-down aerial photograph of aggregate stockpiles in a gravel yard">
+  <svg class="topo" viewBox="0 0 1200 560" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<path d="M-20 420 Q200 300 420 360 T880 320 T1240 360" fill="none" stroke="#1D3FAE" stroke-opacity=".22"/>
+<path d="M-20 460 Q220 350 440 400 T900 370 T1240 410" fill="none" stroke="#1D3FAE" stroke-opacity=".18"/>
+<path d="M-20 500 Q240 410 460 450 T920 420 T1240 460" fill="none" stroke="#1D3FAE" stroke-opacity=".14"/>
+<path d="M-20 380 Q180 260 400 320 T860 270 T1240 310" fill="none" stroke="#1D3FAE" stroke-opacity=".26"/>
+<path d="M-20 340 Q160 220 380 290 T840 230 T1240 270" fill="none" stroke="#E8590C" stroke-opacity=".3"/>
+</svg>
+  <div class="slot-tag"><b>IMG 03</b> — AERIAL · AGGREGATE YARD · TOP-DOWN · 21:9</div>
+</div>
+
+<section class="sec" id="faq">
   <div class="wrap">
-    <p class="eyebrow">Deliverables</p>
-    <h2>What lands in your inbox</h2>
-    <div class="deliv"><div><div class="k">Report</div><b>Volume report (PDF)</b><p>Per-pile volumes with surfaces, base assumptions, and methodology documented.</p></div><div><div class="k">Data</div><b>Surfaces (GeoTIFF/LAS)</b><p>The measured surfaces behind every number, yours to audit.</p></div><div><div class="k">Compare</div><b>Cut / fill analysis</b><p>Volume change between any two flights, mapped and totalled.</p></div><div><div class="k">Visual</div><b>Site orthomosaic</b><p>A dated visual record of the site as measured.</p></div></div>
-    
+    <div class="eyebrow rv">FAQ</div>
+    <h2 class="h2 rv">Common questions</h2>
+    <div class="faq-list rv rv2">
+      <div class="faq"><button aria-expanded="false"><span>How accurate are drone-measured volumes?</span><span class="x">+</span></button><div class="faq-a"><div><p>For inventory work, what matters most is repeatability: the same flight plan and processing every visit, so the change between flights is real. Expected accuracy is stated in the quote, and independent checkpoints are available when a project needs the numbers verified.</p></div></div></div>
+<div class="faq"><button aria-expanded="false"><span>What do you need from us?</span><span class="x">+</span></button><div class="faq-a"><div><p>Agreement on how piles are defined — boundaries, toe rules, and the base surface volumes are measured against. If there's no base surface yet, the first flight establishes the baseline everything after is compared to.</p></div></div></div>
+<div class="faq"><button aria-expanded="false"><span>Can you cover more than one yard?</span><span class="x">+</span></button><div class="faq-a"><div><p>Yes. Multiple yards can be scheduled in the same run so inventory across locations is measured on a consistent timeline. Tell us the sites and the reporting date you're working toward.</p></div></div></div>
+    </div>
   </div>
 </section>
 
-<section class="sec tint">
-  <div class="wrap"><div class="sec-head" style="margin-bottom:0">
-    <p class="eyebrow">Use cases</p><h2>Who measures by air</h2>
-    <p class="lede">Anywhere material moves and money follows it, measured volumes settle the conversation.</p><ul class="checks"><li>Aggregate producers — inventory and month-end reconciliation</li><li>Earthworks contractors — cut/fill progress and pay quantities</li><li>Landfills and soil depots — airspace and capacity tracking</li><li>Winter operations — salt and sand stock verification</li></ul>
-  </div></div>
-</section>
-<section class="sec">
-  <div class="wrap"><div class="sec-head" style="margin-bottom:0">
-    <p class="eyebrow">Method</p><h2>Same flight, same basis, every time</h2>
-    <p class="lede">Repeat surveys fly the identical flight plan with RTK positioning, so period-over-period comparisons measure your material — not survey noise. Base surfaces and toe definitions are documented in every report, making the numbers defensible in an audit or dispute.</p>
-  </div></div>
-</section>
-<section class="cta">
-  <svg class="contours" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1"><path d="M-20 520c140-30 200-120 330-130s210 60 340 40 190-110 330-120 200 30 240 40"/><path d="M-20 460c150-40 210-140 330-150s200 50 330 30 200-120 340-130 190 20 240 30"/><path d="M-20 400c160-50 220-150 330-160s190 40 320 20 210-130 350-140 180 10 240 20"/><path d="M-20 340c170-60 230-160 330-170s180 30 310 10 220-140 360-150 170 0 240 10"/><path d="M60 580c120-20 180-90 300-100s220 50 350 30 180-90 320-100 150 20 190 30"/><path d="M-20 280c180-70 240-170 330-180s170 20 300 0 230-150 370-160"/></g></svg>
-  <div class="wrap">
-    <h2>Ready to scope your project?</h2>
-    <p>Free consultation, fixed written quote, committed delivery date.</p>
-    <a class="btn onband" href="/contact/">Get a quote</a>
-    <span class="mono">OR EMAIL <a href="mailto:info@airmatix.ca">info@airmatix.ca</a></span>
+<div class="related">
+  <div class="wrap"><b>Also:</b> <a href="/services/drone-surveying-mapping/">Surveying &amp; Mapping</a> <a href="/services/construction-progress-monitoring/">Progress Monitoring</a> <a href="/services/drone-inspections/">Drone Inspections</a> <a href="/services/aerial-photography/">Aerial Photography</a></div>
+</div>
+
+<section class="sec cta" id="quote">
+  <div class="wrap cta-grid">
+    <div>
+      <div class="eyebrow rv">Start a project</div>
+      <h2 class="h2 rv">Tell us about your site.</h2>
+      <p class="big rv rv2">Location, rough size, what you need measured. We'll come back with feasibility, a timeline and a fixed quote.</p>
+      <span class="mail rv rv2">OR EMAIL <a href="mailto:info@airmatix.ca">info@airmatix.ca</a></span>
+    </div>
+    <form id="leadform" class="rv rv3" novalidate>
+      <input type="hidden" name="service" value="volumetric-analysis">
+      <div style="position:absolute;left:-9999px" aria-hidden="true"><label for="f-co">Company</label><input id="f-co" name="company" type="text" tabindex="-1" autocomplete="off"></div>
+      <div class="f-row">
+        <div><label for="f-name">Name</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
+        <div><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+      </div>
+      <div class="f-row">
+        <div><label for="f-phone">Phone (optional)</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+        <div><label for="f-loc">Site location</label><input id="f-loc" name="location" type="text" placeholder="City or address"></div>
+      </div>
+      <div><label for="f-msg">What do you need measured?</label><textarea id="f-msg" name="message"></textarea></div>
+      <button class="btn btn-orange" type="submit">Send project details</button>
+      <p class="f-note">Replies within one business day.</p>
+    </form>
   </div>
 </section>
+
 </main>
-<footer>
-  <div class="wrap">
-    <div class="fgrid">
-      <div class="fbrand">
-        <a class="brand" href="/"><svg class="mark" width="30" height="28" viewBox="0 0 346 328" fill="currentColor" aria-hidden="true"><path d="M0 273.5L85.5 214L173 71L260.5 214L346 273.5L173 0Z"/><path d="M302.5 326.5L173 142L43.5 326.5L165.5 206L180.5 206Z"/></svg>AIRMATIX</a>
-        <p>RTK drone surveying, mapping, and inspection services for the Greater Toronto Area and Southern Ontario. Flights conducted by a Transport Canada certified pilot (Advanced Operations).</p>
+
+<footer class="tblock">
+  <div class="wrap" style="padding-top:0;padding-bottom:0">
+    <div class="tb-grid">
+      <div class="tb-cell tb-brand">
+        <span class="mark2">AIRMATI<b>X</b></span>
+        <p>RTK drone surveying, mapping and inspection for the Greater Toronto Area and Southern Ontario. Flights by a Transport Canada certified pilot (Advanced Operations).</p>
       </div>
-      <div>
-        <p class="fh">Services</p>
+      <div class="tb-cell">
+        <h4>Services</h4>
         <ul>
           <li><a href="/services/drone-surveying-mapping/">Surveying &amp; Mapping</a></li>
           <li><a href="/services/volumetric-analysis/">Volumetric Analysis</a></li>
@@ -315,28 +398,63 @@ footer a:hover{color:var(--ink);text-decoration:underline;text-underline-offset:
           <li><a href="/services/aerial-photography/">Aerial Photography</a></li>
         </ul>
       </div>
-      <div>
-        <p class="fh">Company</p>
+      <div class="tb-cell">
+        <h4>Company</h4>
         <ul>
           <li><a href="/about/">About</a></li>
           <li><a href="/contact/">Contact</a></li>
-          <li><a href="mailto:info@airmatix.ca">info@airmatix.ca</a></li>
-          <li><a href="https://www.linkedin.com/company/airmatix" rel="noopener">LinkedIn</a></li>
-          <li><a href="https://x.com/AirmatixCa" rel="noopener">X&nbsp;(Twitter)</a></li>
+          <li><a href="https://www.linkedin.com/company/airmatix">LinkedIn</a></li>
+          <li><a href="https://x.com/AirmatixCa">X (Twitter)</a></li>
+        </ul>
+      </div>
+      <div class="tb-cell">
+        <h4>Sheet</h4>
+        <ul class="mono" style="font-size:12.5px;line-height:2">
+          <li>NO — 03 · VOLUMETRICS</li>
+          <li>REV — A</li>
+          <li>DATE — 2026</li>
+          <li>DATUM — NAD83 / UTM 17N</li>
         </ul>
       </div>
     </div>
-    <div class="legal">
-      <span>© 2026 Airmatix. All rights reserved.</span>
-      <span>Greater Toronto Area · Southern Ontario, Canada</span>
+    <div class="tb-foot">
+      <span>© 2026 AIRMATIX. ALL RIGHTS RESERVED.</span>
+      <span>GREATER TORONTO AREA · SOUTHERN ONTARIO, CANADA</span>
     </div>
   </div>
 </footer>
 <script>
-document.querySelector('.menu-btn')?.addEventListener('click',function(){
-  var n=document.querySelector('.nav');var open=n.classList.toggle('open');
-  this.setAttribute('aria-expanded',open?'true':'false');
+(function(){
+"use strict";
+var nav=document.getElementById('nav');
+function navState(){nav.classList.toggle('on',window.scrollY>40)}
+navState();window.addEventListener('scroll',navState,{passive:true});
+var io=new IntersectionObserver(function(es){
+  es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+document.querySelectorAll('.faq button').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var item=btn.closest('.faq'),open=item.classList.contains('open');
+    document.querySelectorAll('.faq.open').forEach(function(o){o.classList.remove('open');o.querySelector('button').setAttribute('aria-expanded','false')});
+    if(!open){item.classList.add('open');btn.setAttribute('aria-expanded','true')}
+  });
 });
+document.getElementById('leadform').addEventListener('submit',async function(ev){
+  ev.preventDefault();
+  var f=ev.target;
+  if(f.company&&f.company.value)return;
+  var data={name:f.name.value,email:f.email.value,phone:f.phone.value,location:f.location.value,message:f.message.value,service:f.service.value,page:location.pathname};
+  try{
+    var r=await fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+    if(r.ok){location.href='/thanks/';return}
+    throw 0;
+  }catch(e){
+    var body='Name: '+data.name+'\nEmail: '+data.email+'\nPhone: '+data.phone+'\nSite location: '+data.location+'\nService: '+data.service+'\n\n'+data.message;
+    location.href='mailto:info@airmatix.ca?subject='+encodeURIComponent('Quote request — '+(data.location||'new site'))+'&body='+encodeURIComponent(body);
+  }
+});
+})();
 </script>
 </body>
 </html>

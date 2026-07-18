@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /lp/
+Disallow: /thanks/
+Disallow: /api/
 
 Sitemap: https://airmatix.ca/sitemap.xml
