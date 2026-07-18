@@ -135,14 +135,10 @@ a{color:inherit}
 @media(max-width:920px){.svc,.svc:nth-child(4),.svc:nth-child(5){grid-column:span 3}}
 @media(max-width:640px){.svc,.svc:nth-child(4),.svc:nth-child(5){grid-column:span 6}}
 
-/* image slots */
-.slot{position:relative;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:
- repeating-linear-gradient(-45deg,transparent 0 14px,rgba(29,63,174,.05) 14px 15px),var(--paper-2);
- min-height:min(62vh,560px);display:flex;align-items:flex-end;overflow:hidden}
-.slot svg.topo{position:absolute;inset:0;width:100%;height:100%;opacity:.5}
-.slot-tag{position:relative;z-index:2;margin:0 0 22px 22px;background:var(--ink);color:#fff;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;padding:8px 14px}
-.slot-tag b{color:var(--orange);font-weight:500}
-.slot.dark{background:repeating-linear-gradient(-45deg,transparent 0 14px,rgba(255,255,255,.03) 14px 15px),var(--night-2);border-color:var(--night-line)}
+/* photo bands */
+.photo{position:relative;border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;background:var(--night)}
+.photo img{display:block;width:100%;height:auto;aspect-ratio:1408/604;object-fit:cover}
+@media(max-width:720px){.photo img{aspect-ratio:16/10}}
 
 /* accuracy */
 .acc-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(40px,6vw,90px);margin-top:56px;align-items:center}
@@ -330,16 +326,7 @@ textarea{min-height:110px;resize:vertical}
   </div>
 </section>
 
-<div class="slot" role="img" aria-label="Image slot: aerial photograph of a large commercial flat roof with mechanical units in even overcast light">
-  <svg class="topo" viewBox="0 0 1200 560" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-<path d="M-20 420 Q200 300 420 360 T880 320 T1240 360" fill="none" stroke="#1D3FAE" stroke-opacity=".22"/>
-<path d="M-20 460 Q220 350 440 400 T900 370 T1240 410" fill="none" stroke="#1D3FAE" stroke-opacity=".18"/>
-<path d="M-20 500 Q240 410 460 450 T920 420 T1240 460" fill="none" stroke="#1D3FAE" stroke-opacity=".14"/>
-<path d="M-20 380 Q180 260 400 320 T860 270 T1240 310" fill="none" stroke="#1D3FAE" stroke-opacity=".26"/>
-<path d="M-20 340 Q160 220 380 290 T840 230 T1240 270" fill="none" stroke="#E8590C" stroke-opacity=".3"/>
-</svg>
-  <div class="slot-tag"><b>IMG 05</b> — AERIAL · COMMERCIAL ROOFTOP · OVERCAST · 21:9</div>
-</div>
+<figure class="photo"><img src="/assets/img/inspections-rooftop.jpg" alt="Aerial view of a large commercial flat roof with HVAC units and ductwork under even overcast light" width="1408" height="604" loading="lazy" decoding="async"></figure>
 
 <section class="sec" id="faq">
   <div class="wrap">
