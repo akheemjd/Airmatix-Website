@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Airmatix | RTK Drone Surveying & Mapping — Toronto & GTA</title>
+<meta name="description" content="Survey-grade drone mapping, volumetrics, inspections and aerial photography in the GTA. RTK accuracy, Transport Canada Advanced Operations certified.">
+<link rel="canonical" href="https://airmatix.ca/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Airmatix">
+<meta property="og:title" content="Airmatix | RTK Drone Surveying & Mapping — Toronto & GTA">
+<meta property="og:description" content="Survey-grade drone mapping, volumetrics, inspections and aerial photography in the GTA. RTK accuracy, Transport Canada Advanced Operations certified.">
+<meta property="og:url" content="https://airmatix.ca/">
+<meta property="og:image" content="https://airmatix.ca/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_CA">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@AirmatixCa">
+<meta name="twitter:title" content="Airmatix | RTK Drone Surveying & Mapping — Toronto & GTA">
+<meta name="twitter:description" content="Survey-grade drone mapping, volumetrics, inspections and aerial photography in the GTA. RTK accuracy, Transport Canada Advanced Operations certified.">
+<meta name="twitter:image" content="https://airmatix.ca/og-image.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,100,400..800&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400..600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F6F8F4;      /* plan-sheet white  */
+  --card:#FFFFFF;
+  --ink:#10202E;        /* chart navy        */
+  --ink-2:#46586A;      /* slate secondary   */
+  --line:#D8DFD8;       /* hairline          */
+  --contour:#B9C6BB;    /* contour tint      */
+  --flag:#E8501A;       /* field-flag orange */
+  --flag-deep:#C13F10;
+  --band:#0C2233;       /* dark section      */
+  --band-ink:#EDF2EE;
+  --band-2:#8FA3B2;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --disp:"Archivo",system-ui,sans-serif;
+  --body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:#fff;
+  padding:.7em 1.2em;z-index:100;border-radius:0 0 6px 0;text-decoration:none}
+.skip:focus{left:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);
+  font-size:1.0625rem;line-height:1.65;-webkit-font-smoothing:antialiased}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--flag);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1120px;margin-inline:auto;padding-inline:clamp(20px,4vw,40px)}
+.mono{font-family:var(--mono);font-size:.78rem;letter-spacing:.08em}
+
+/* ---------- type ---------- */
+h1,h2,h3,h4{font-family:var(--disp);font-stretch:112%;line-height:1.08;
+  letter-spacing:-.015em;margin:0 0 .5em;font-weight:700;text-wrap:balance}
+h1{font-size:clamp(2.3rem,5.6vw,3.9rem)}
+h2{font-size:clamp(1.7rem,3.4vw,2.5rem)}
+h3{font-size:clamp(1.15rem,2vw,1.35rem)}
+p{margin:0 0 1em}
+.lede{font-size:clamp(1.1rem,1.8vw,1.3rem);color:var(--ink-2);max-width:44em}
+.eyebrow{font-family:var(--mono);font-size:.75rem;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--flag);display:flex;align-items:center;
+  gap:.6em;margin:0 0 1.1em;font-weight:500}
+.eyebrow::before{content:"";width:22px;height:1.5px;background:var(--flag)}
+
+/* ---------- header ---------- */
+.top{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--paper) 88%,transparent);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:1.6rem;min-height:70px}
+.brand{display:flex;align-items:center;gap:.65rem;text-decoration:none;
+  font-family:var(--disp);font-weight:800;font-stretch:118%;font-size:1.22rem;
+  letter-spacing:.02em}
+.brand .mark{color:var(--ink);flex-shrink:0}
+.nav{margin-left:auto;display:flex;align-items:center;gap:clamp(.9rem,2.4vw,2rem)}
+.nav a{text-decoration:none;font-weight:500;font-size:.98rem;color:var(--ink-2)}
+.nav a:hover,.nav a[aria-current]{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:.55em;background:var(--flag);
+  color:#fff;text-decoration:none;font-weight:600;font-family:var(--disp);
+  font-stretch:106%;padding:.72em 1.35em;border-radius:6px;border:0;
+  font-size:.98rem;transition:background .15s}
+.btn:hover{background:var(--flag-deep)}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--paper)}
+.btn.onband{background:var(--flag)}
+.menu-btn{display:none;margin-left:auto;background:none;border:1.5px solid var(--ink);
+  border-radius:6px;padding:.45rem .6rem;cursor:pointer;color:var(--ink)}
+@media (max-width:860px){
+  .menu-btn{display:block}
+  .nav{position:fixed;inset:70px 0 auto 0;background:var(--paper);flex-direction:column;
+    align-items:stretch;padding:1rem clamp(20px,4vw,40px) 1.4rem;gap:.2rem;
+    border-bottom:1px solid var(--line);display:none}
+  .nav.open{display:flex}
+  .nav a{padding:.7rem 0;border-bottom:1px solid var(--line);font-size:1.05rem}
+  .nav .btn{margin-top:.9rem;justify-content:center}
+}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;padding:clamp(64px,9vw,110px) 0 clamp(56px,8vw,96px)}
+.hero .contours{position:absolute;inset:0;width:100%;height:100%;color:var(--contour);opacity:.5;z-index:0}
+.hero .wrap{position:relative;z-index:1;display:grid;gap:clamp(2.2rem,5vw,4rem);
+  grid-template-columns:minmax(0,1fr);align-items:center}
+.hero h1{max-width:16ch}
+.hero h1 .u{color:var(--flag)}
+.hero .actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.8rem}
+.coords{margin-top:2.4rem;color:var(--ink-2)}
+
+/* title-block card — signature element */
+.tblock{position:relative;background:var(--card);border:1.5px solid var(--ink);
+  border-radius:4px;box-shadow:6px 6px 0 0 color-mix(in srgb,var(--ink) 12%,transparent)}
+.tblock .fid{position:absolute;color:var(--flag)}
+.tblock .fid.tl{top:-9px;left:-9px}.tblock .fid.br{bottom:-9px;right:-9px}
+.tblock header{display:flex;justify-content:space-between;align-items:center;
+  padding:.8rem 1.1rem;border-bottom:1.5px solid var(--ink);
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase}
+.tblock header b{font-weight:600}
+.tblock dl{margin:0}
+.tblock .row{display:grid;grid-template-columns:38% 62%;border-bottom:1px solid var(--line)}
+.tblock .row:last-child{border-bottom:0}
+.tblock dt{padding:.72rem 1.1rem;font-family:var(--mono);font-size:.7rem;
+  letter-spacing:.13em;text-transform:uppercase;color:var(--ink-2);
+  border-right:1px solid var(--line);align-self:center}
+.tblock dd{margin:0;padding:.72rem 1.1rem;font-weight:500;font-size:.95rem}
+
+/* ---------- sections ---------- */
+.sec{padding:clamp(56px,8vw,104px) 0}
+.sec.tint{background:#EFF3EC;border-block:1px solid var(--line)}
+.sec-head{max-width:46em;margin-bottom:clamp(2rem,4vw,3rem)}
+
+/* service cards */
+.cards{display:grid;gap:1.1rem;grid-template-columns:repeat(auto-fit,minmax(270px,1fr))}
+.card{position:relative;background:var(--card);border:1px solid var(--line);
+  border-radius:8px;padding:1.6rem 1.5rem 1.5rem;text-decoration:none;
+  display:flex;flex-direction:column;gap:.55rem;transition:border-color .15s,transform .15s}
+.card:hover{border-color:var(--ink);transform:translateY(-2px)}
+.card .icn{width:34px;height:34px;color:var(--flag);margin-bottom:.4rem}
+.card h3{margin:0}
+.card p{margin:0;color:var(--ink-2);font-size:.97rem}
+.card .go{margin-top:auto;padding-top:.9rem;font-family:var(--mono);font-size:.75rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--flag);font-weight:500}
+.card:hover .go{text-decoration:underline;text-underline-offset:3px}
+
+/* dark accuracy band */
+.band{background:var(--band);color:var(--band-ink);position:relative;overflow:hidden}
+.band .contours{position:absolute;inset:0;width:100%;height:100%;color:#31485B;opacity:.55}
+.band .wrap{position:relative}
+.band h2{color:#fff}
+.band .lede{color:var(--band-2)}
+.specs{display:grid;gap:1px;background:#31485B;border:1px solid #31485B;border-radius:8px;
+  overflow:hidden;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin-top:2.4rem}
+.spec{background:var(--band);padding:1.5rem 1.4rem}
+.spec .k{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--flag);margin-bottom:.55rem}
+.spec .v{font-family:var(--disp);font-stretch:110%;font-weight:700;font-size:1.3rem;color:#fff}
+.spec p{margin:.45rem 0 0;font-size:.92rem;color:var(--band-2)}
+
+/* process — a real sequence, numbering is information */
+.steps{counter-reset:s;display:grid;gap:1.1rem;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.step{counter-increment:s;background:var(--card);border:1px solid var(--line);
+  border-radius:8px;padding:1.5rem 1.4rem}
+.step::before{content:"0" counter(s);font-family:var(--mono);color:var(--flag);
+  font-size:.8rem;letter-spacing:.14em;display:block;margin-bottom:.7rem}
+.step h3{font-size:1.08rem}
+.step p{margin:0;color:var(--ink-2);font-size:.95rem}
+
+/* industries + area */
+.two{display:grid;gap:clamp(2rem,5vw,4rem);grid-template-columns:1fr 1fr;align-items:start}
+@media (max-width:820px){.two{grid-template-columns:1fr}}
+.tags{display:flex;flex-wrap:wrap;gap:.55rem;padding:0;margin:1.2rem 0 0;list-style:none}
+.tags li{border:1px solid var(--ink);border-radius:999px;padding:.42em 1em;
+  font-size:.92rem;font-weight:500;background:var(--card)}
+.arealist{columns:2;gap:2.5rem;padding:0;margin:1.2rem 0 0;list-style:none}
+.arealist li{padding:.5rem 0;border-bottom:1px solid var(--line);font-weight:500}
+@media (max-width:480px){.arealist{columns:1}}
+
+/* checklist */
+.checks{list-style:none;padding:0;margin:1.4rem 0 0;display:grid;gap:.75rem}
+.checks li{padding-left:1.9rem;position:relative}
+.checks li::before{content:"";position:absolute;left:0;top:.42em;width:1rem;height:.55rem;
+  border-left:2.5px solid var(--flag);border-bottom:2.5px solid var(--flag);transform:rotate(-45deg)}
+
+/* FAQ */
+.faq{max-width:52rem}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;
+  gap:1rem;align-items:center;padding:1.15rem 0;font-family:var(--disp);
+  font-weight:600;font-size:1.06rem;font-stretch:105%}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);color:var(--flag);
+  font-size:1.25rem;flex-shrink:0;transition:transform .15s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq .a{padding:0 0 1.25rem;color:var(--ink-2);max-width:42em}
+
+/* CTA band */
+.cta{background:var(--band);color:#fff;position:relative;overflow:hidden}
+.cta .contours{position:absolute;inset:0;width:100%;height:100%;color:#31485B;opacity:.5}
+.cta .wrap{position:relative;text-align:center;padding-block:clamp(64px,9vw,110px)}
+.cta p{color:var(--band-2);max-width:38em;margin-inline:auto}
+.cta .btn{margin-top:1.4rem}
+.cta .mono{color:var(--band-2);display:block;margin-top:1.6rem}
+.cta .mono a{color:var(--band-ink)}
+
+/* footer */
+footer{background:var(--paper);border-top:1px solid var(--line);
+  padding:clamp(40px,6vw,64px) 0 2.2rem}
+.fgrid{display:grid;gap:2.4rem;grid-template-columns:1.4fr 1fr 1fr}
+@media (max-width:760px){.fgrid{grid-template-columns:1fr}}
+.fh{font-family:var(--mono);font-size:.72rem;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--ink-2);margin:0 0 .9rem}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:.5rem}
+footer a{text-decoration:none;color:var(--ink-2);font-size:.96rem}
+footer a:hover{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+.fbrand p{color:var(--ink-2);font-size:.94rem;max-width:26em;margin:.9rem 0 0}
+.legal{margin-top:2.6rem;padding-top:1.3rem;border-top:1px solid var(--line);
+  display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;
+  color:var(--ink-2);font-size:.85rem}
+
+/* service page bits */
+.crumbs{font-family:var(--mono);font-size:.75rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-2);margin-bottom:1.4rem}
+.crumbs a{color:inherit;text-decoration:none}
+.crumbs a:hover{color:var(--flag)}
+.crumbs span{color:var(--flag)}
+.deliv{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);
+  border-radius:8px;overflow:hidden;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:1.8rem}
+.deliv div{background:var(--card);padding:1.3rem 1.3rem}
+.deliv .k{font-family:var(--mono);font-size:.7rem;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--flag);margin-bottom:.4rem}
+.deliv b{font-family:var(--disp);font-stretch:108%;font-size:1.02rem}
+.deliv p{margin:.35rem 0 0;font-size:.9rem;color:var(--ink-2)}
+.note{border-left:3px solid var(--flag);background:var(--card);border-radius:0 8px 8px 0;
+  padding:1.1rem 1.3rem;margin-top:1.8rem;color:var(--ink-2);font-size:.97rem;max-width:46em}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "ProfessionalService", "@id": "https://airmatix.ca/#org", "name": "Airmatix", "url": "https://airmatix.ca/", "logo": "https://airmatix.ca/og-image.png", "email": "info@airmatix.ca", "description": "RTK drone surveying, mapping, volumetric analysis, inspection, and aerial photography services in the Greater Toronto Area and Southern Ontario.", "areaServed": [{"@type": "City", "name": "Toronto"}, {"@type": "City", "name": "Mississauga"}, {"@type": "City", "name": "Brampton"}, {"@type": "City", "name": "Vaughan"}, {"@type": "City", "name": "Markham"}, {"@type": "City", "name": "Oakville"}, {"@type": "City", "name": "Burlington"}, {"@type": "City", "name": "Hamilton"}, {"@type": "City", "name": "Oshawa"}, {"@type": "AdministrativeArea", "name": "Southern Ontario"}], "address": {"@type": "PostalAddress", "addressRegion": "ON", "addressCountry": "CA"}, "sameAs": ["https://www.linkedin.com/company/airmatix", "https://x.com/AirmatixCa"]}, {"@type": "WebSite", "name": "Airmatix", "url": "https://airmatix.ca/"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What areas do you serve?", "acceptedAnswer": {"@type": "Answer", "text": "We're based in the Greater Toronto Area and regularly fly across Southern Ontario — Toronto, Mississauga, Brampton, Vaughan, Markham, Oakville, Burlington, Hamilton, Oshawa, and surrounding regions. For projects farther afield, get in touch and we'll confirm availability."}}, {"@type": "Question", "name": "How accurate are your drone surveys?", "acceptedAnswer": {"@type": "Answer", "text": "We fly RTK-corrected missions, which deliver centimetre-level positional accuracy on geotagged imagery. Final deliverable accuracy depends on site conditions and flight parameters, and we can validate against independent checkpoints on request. Accuracy expectations are stated up front in every quote."}}, {"@type": "Question", "name": "Are your flights legal and insured against risk to my site?", "acceptedAnswer": {"@type": "Answer", "text": "All flights are conducted by a pilot holding a Transport Canada Advanced Operations certificate, operating under Canada's RPAS regulations (CARs Part IX). Advanced certification permits operations in controlled airspace and near people, with air traffic authorization obtained whenever a mission requires it."}}, {"@type": "Question", "name": "What file formats do I receive?", "acceptedAnswer": {"@type": "Answer", "text": "Engineering-ready formats: georeferenced orthomosaics (GeoTIFF), point clouds (LAS/LAZ), digital surface and terrain models (GeoTIFF), CAD contours and linework (DXF), 3D mesh models (OBJ), and PDF reports. If your workflow needs something specific, tell us and we'll confirm it before we fly."}}, {"@type": "Question", "name": "How long does a project take?", "acceptedAnswer": {"@type": "Answer", "text": "Most sites are flown in a single visit — often under a morning. Processed deliverables typically follow within 2–5 business days depending on site size and outputs, and your quote will include a committed delivery date."}}, {"@type": "Question", "name": "How much does it cost?", "acceptedAnswer": {"@type": "Answer", "text": "Pricing depends on site area, the deliverables you need, and flight frequency. We don't publish flat rates because no two sites are alike — instead, we provide a free consultation and a fixed written quote, so there are no surprises."}}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/"><svg class="mark" width="30" height="28" viewBox="0 0 346 328" fill="currentColor" aria-hidden="true"><path d="M0 273.5L85.5 214L173 71L260.5 214L346 273.5L173 0Z"/><path d="M302.5 326.5L173 142L43.5 326.5L165.5 206L180.5 206Z"/></svg>AIRMATIX</a>
+    <button class="menu-btn" aria-expanded="false" aria-label="Open menu">
+      <svg width="20" height="14" viewBox="0 0 20 14" fill="none" aria-hidden="true"><path d="M0 1h20M0 7h20M0 13h20" stroke="currentColor" stroke-width="2"/></svg>
+    </button>
+    <nav class="nav" aria-label="Main">
+      <a href="/services/">Services</a><a href="/about/">About</a><a href="/contact/">Contact</a>
+      <a class="btn" href="/contact/">Get a quote</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <svg class="contours" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1"><path d="M-20 520c140-30 200-120 330-130s210 60 340 40 190-110 330-120 200 30 240 40"/><path d="M-20 460c150-40 210-140 330-150s200 50 330 30 200-120 340-130 190 20 240 30"/><path d="M-20 400c160-50 220-150 330-160s190 40 320 20 210-130 350-140 180 10 240 20"/><path d="M-20 340c170-60 230-160 330-170s180 30 310 10 220-140 360-150 170 0 240 10"/><path d="M60 580c120-20 180-90 300-100s220 50 350 30 180-90 320-100 150 20 190 30"/><path d="M-20 280c180-70 240-170 330-180s170 20 300 0 230-150 370-160"/></g></svg>
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">RTK Drone Surveying · GTA &amp; Southern Ontario</p>
+      <h1>Survey-grade aerial data, <span class="u">measured</span> — not estimated.</h1>
+      <p class="lede">Airmatix turns drone flights into engineering-ready maps, models, and measurements. RTK-corrected photogrammetry for construction, land development, and asset owners across the Greater Toronto Area.</p>
+      <div class="actions">
+        <a class="btn" href="/contact/">Book a free consultation</a>
+        <a class="btn ghost" href="/services/">Explore services</a>
+      </div>
+      <p class="mono coords">43.65° N, 79.38° W — SERVING THE GTA &amp; SOUTHERN ONTARIO</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Services</p>
+      <h2>Five ways to put precise aerial data to work</h2>
+      <p class="lede">Every service below is delivered end-to-end by Airmatix: flight planning, capture, processing, and files formatted for your engineering or planning workflow.</p>
+    </div>
+    <div class="cards">
+      <a class="card" href="/services/drone-surveying-mapping/"><span class="icn"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 8l8-3 8 3 8-3v19l-8 3-8-3-8 3V8z"/><path d="M12 5v19M20 8v19"/></svg></span><h3>Surveying &amp; Mapping</h3><p>Orthomosaics, topographic surfaces, contours, and point clouds — georeferenced and CAD-ready.</p><span class="go">View service →</span></a>
+      <a class="card" href="/services/volumetric-analysis/"><span class="icn"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 26h26"/><path d="M6 26l6-11 5 6 4-8 5 13"/><path d="M6 26v0" stroke-linecap="round"/><path d="M4 8h6M7 5v6" stroke-linecap="round"/></svg></span><h3>Volumetric Analysis</h3><p>Stockpile and earthworks volumes measured from the air. Repeatable, safe, and reconcilable.</p><span class="go">View service →</span></a>
+      <a class="card" href="/services/construction-progress-monitoring/"><span class="icn"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="18" width="6" height="10" rx="1"/><rect x="13" y="12" width="6" height="16" rx="1"/><rect x="22" y="5" width="6" height="23" rx="1"/></svg></span><h3>Progress Monitoring</h3><p>Recurring flights on identical flight plans give you a consistent visual and measurable record of your build.</p><span class="go">View service →</span></a>
+      <a class="card" href="/services/drone-inspections/"><span class="icn"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="14" cy="14" r="9"/><path d="M21 21l7 7"/><path d="M10.5 14a3.5 3.5 0 0 1 3.5-3.5"/></svg></span><h3>Drone Inspections</h3><p>High-magnification visual inspections of roofs, façades, and towers — no ladders, lifts, or shutdowns.</p><span class="go">View service →</span></a>
+      <a class="card" href="/services/aerial-photography/"><span class="icn"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="9" width="26" height="18" rx="3"/><path d="M11 9l2.5-4h5L21 9"/><circle cx="16" cy="18" r="5.5"/></svg></span><h3>Aerial Photography</h3><p>High-resolution stills and 4K video for developments, real estate, and project milestones.</p><span class="go">View service →</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="sec band">
+  <svg class="contours" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1"><path d="M-20 520c140-30 200-120 330-130s210 60 340 40 190-110 330-120 200 30 240 40"/><path d="M-20 460c150-40 210-140 330-150s200 50 330 30 200-120 340-130 190 20 240 30"/><path d="M-20 400c160-50 220-150 330-160s190 40 320 20 210-130 350-140 180 10 240 20"/><path d="M-20 340c170-60 230-160 330-170s180 30 310 10 220-140 360-150 170 0 240 10"/><path d="M60 580c120-20 180-90 300-100s220 50 350 30 180-90 320-100 150 20 190 30"/><path d="M-20 280c180-70 240-170 330-180s170 20 300 0 230-150 370-160"/></g></svg>
+  <div class="wrap">
+    <p class="eyebrow">Why RTK matters</p>
+    <h2>Positioning you can hand to an engineer</h2>
+    <p class="lede">Consumer drones estimate position within metres. Our missions fly with real-time kinematic (RTK) corrections, tightening every image's geotag to the centimetre — the difference between a pretty picture and data you can design against.</p>
+    <div class="specs">
+      <div class="spec"><div class="k">Positioning</div><div class="v">RTK-corrected</div><p>Live corrections during flight — centimetre-level image geotags, not metre-level guesses.</p></div>
+      <div class="spec"><div class="k">Validation</div><div class="v">Checkpoints on request</div><p>Independent ground checkpoints available to verify deliverable accuracy on your site.</p></div>
+      <div class="spec"><div class="k">Compliance</div><div class="v">TC Advanced Operations</div><p>Certified for Canada's highest standard RPAS category, including controlled airspace with authorization.</p></div>
+      <div class="spec"><div class="k">Deliverables</div><div class="v">Engineering-ready</div><p>GeoTIFF, LAS/LAZ, DXF, and OBJ files that drop straight into CAD and GIS workflows.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="process">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">How it works</p>
+      <h2>From first email to final files</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><h3>Scope &amp; quote</h3><p>Tell us your site and what you need. We confirm deliverables, accuracy expectations, and a fixed price — free, in writing.</p></div>
+      <div class="step"><h3>Plan &amp; authorize</h3><p>We design the flight plan, review airspace, and secure any air traffic authorization the mission requires.</p></div>
+      <div class="step"><h3>Fly &amp; capture</h3><p>Most sites are captured in a single visit. RTK corrections run live throughout the flight.</p></div>
+      <div class="step"><h3>Process &amp; deliver</h3><p>Data is processed through a professional photogrammetry pipeline and delivered in your formats, typically within 2–5 business days.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec tint">
+  <div class="wrap two">
+    <div>
+      <p class="eyebrow">Industries</p>
+      <h2>Built for teams that build</h2>
+      <p class="lede">Our deliverables are shaped by the people who use them — estimators, engineers, project managers, and owners.</p>
+      <ul class="tags">
+        <li>Construction</li><li>Land development</li><li>Civil engineering</li>
+        <li>Aggregates &amp; earthworks</li><li>Real estate</li><li>Roofing &amp; property</li>
+        <li>Utilities &amp; telecom</li>
+      </ul>
+    </div>
+    <div>
+      <p class="eyebrow">Service area</p>
+      <h2>GTA &amp; Southern Ontario</h2>
+      <ul class="arealist">
+        <li>Toronto</li><li>Mississauga</li><li>Brampton</li><li>Vaughan</li>
+        <li>Markham</li><li>Oakville</li><li>Burlington</li><li>Hamilton</li>
+        <li>Oshawa</li><li>Beyond, by arrangement</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">FAQ</p>
+      <h2>Straight answers, before you ask</h2>
+    </div>
+    <div class="faq"><details open><summary>What areas do you serve?</summary><p class="a">We're based in the Greater Toronto Area and regularly fly across Southern Ontario — Toronto, Mississauga, Brampton, Vaughan, Markham, Oakville, Burlington, Hamilton, Oshawa, and surrounding regions. For projects farther afield, get in touch and we'll confirm availability.</p></details><details><summary>How accurate are your drone surveys?</summary><p class="a">We fly RTK-corrected missions, which deliver centimetre-level positional accuracy on geotagged imagery. Final deliverable accuracy depends on site conditions and flight parameters, and we can validate against independent checkpoints on request. Accuracy expectations are stated up front in every quote.</p></details><details><summary>Are your flights legal and insured against risk to my site?</summary><p class="a">All flights are conducted by a pilot holding a Transport Canada Advanced Operations certificate, operating under Canada's RPAS regulations (CARs Part IX). Advanced certification permits operations in controlled airspace and near people, with air traffic authorization obtained whenever a mission requires it.</p></details><details><summary>What file formats do I receive?</summary><p class="a">Engineering-ready formats: georeferenced orthomosaics (GeoTIFF), point clouds (LAS/LAZ), digital surface and terrain models (GeoTIFF), CAD contours and linework (DXF), 3D mesh models (OBJ), and PDF reports. If your workflow needs something specific, tell us and we'll confirm it before we fly.</p></details><details><summary>How long does a project take?</summary><p class="a">Most sites are flown in a single visit — often under a morning. Processed deliverables typically follow within 2–5 business days depending on site size and outputs, and your quote will include a committed delivery date.</p></details><details><summary>How much does it cost?</summary><p class="a">Pricing depends on site area, the deliverables you need, and flight frequency. We don't publish flat rates because no two sites are alike — instead, we provide a free consultation and a fixed written quote, so there are no surprises.</p></details></div>
+  </div>
+</section>
+
+<section class="cta">
+  <svg class="contours" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1"><path d="M-20 520c140-30 200-120 330-130s210 60 340 40 190-110 330-120 200 30 240 40"/><path d="M-20 460c150-40 210-140 330-150s200 50 330 30 200-120 340-130 190 20 240 30"/><path d="M-20 400c160-50 220-150 330-160s190 40 320 20 210-130 350-140 180 10 240 20"/><path d="M-20 340c170-60 230-160 330-170s180 30 310 10 220-140 360-150 170 0 240 10"/><path d="M60 580c120-20 180-90 300-100s220 50 350 30 180-90 320-100 150 20 190 30"/><path d="M-20 280c180-70 240-170 330-180s170 20 300 0 230-150 370-160"/></g></svg>
+  <div class="wrap">
+    <p class="eyebrow" style="justify-content:center">Start a project</p>
+    <h2>Tell us about your site.</h2>
+    <p>Send the location, rough size, and what you need to measure. You'll get a straight answer on feasibility, timeline, and a fixed quote.</p>
+    <a class="btn onband" href="/contact/">Get a quote</a>
+    <span class="mono">OR EMAIL <a href="mailto:info@airmatix.ca">info@airmatix.ca</a></span>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div class="fbrand">
+        <a class="brand" href="/"><svg class="mark" width="30" height="28" viewBox="0 0 346 328" fill="currentColor" aria-hidden="true"><path d="M0 273.5L85.5 214L173 71L260.5 214L346 273.5L173 0Z"/><path d="M302.5 326.5L173 142L43.5 326.5L165.5 206L180.5 206Z"/></svg>AIRMATIX</a>
+        <p>RTK drone surveying, mapping, and inspection services for the Greater Toronto Area and Southern Ontario. Flights conducted by a Transport Canada certified pilot (Advanced Operations).</p>
+      </div>
+      <div>
+        <p class="fh">Services</p>
+        <ul>
+          <li><a href="/services/drone-surveying-mapping/">Surveying &amp; Mapping</a></li>
+          <li><a href="/services/volumetric-analysis/">Volumetric Analysis</a></li>
+          <li><a href="/services/construction-progress-monitoring/">Progress Monitoring</a></li>
+          <li><a href="/services/drone-inspections/">Drone Inspections</a></li>
+          <li><a href="/services/aerial-photography/">Aerial Photography</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="fh">Company</p>
+        <ul>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="mailto:info@airmatix.ca">info@airmatix.ca</a></li>
+          <li><a href="https://www.linkedin.com/company/airmatix" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://x.com/AirmatixCa" rel="noopener">X&nbsp;(Twitter)</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© 2026 Airmatix. All rights reserved.</span>
+      <span>Greater Toronto Area · Southern Ontario, Canada</span>
+    </div>
+  </div>
+</footer>
+<script>
+document.querySelector('.menu-btn')?.addEventListener('click',function(){
+  var n=document.querySelector('.nav');var open=n.classList.toggle('open');
+  this.setAttribute('aria-expanded',open?'true':'false');
+});
+</script>
+</body>
+</html>
